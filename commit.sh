@@ -16,6 +16,7 @@ if [ "$choose" == "y" ]||[ "$choose" == "y" ];then
 	read -p "请输入需要提交的分支名称(Current branch):" branchName
 	if [ "$branchName" != "" ];then
 		echo "正在push:git push origin $branchName"
+		git config --global push.default.matching
 		git push
 	else
 		git push origin $branchName
