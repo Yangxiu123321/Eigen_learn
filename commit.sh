@@ -13,10 +13,12 @@ git commit -m "shell提交:$a"
 read -p "是否需要提交(y/N):" choose
 if [ "$choose" == "y" ]||[ "$choose" == "y" ];then
 	#echo "请输入需要提交的分支名称"
-	read -p "请输入需要提交的分支名称:" branchName
+	read -p "请输入需要提交的分支名称(Current branch):" branchName
 	if [ "$branchName" != "" ];then
 		echo "正在push:git push origin $branchName"
-		gut push origin $branchName
+		git push
+	else
+		git push origin $branchName
 	fi		
 	#echo"正在执行命令:git push origin $branchName"
 	#git push origin $barnchName
